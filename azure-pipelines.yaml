@@ -15,5 +15,5 @@ steps:
     dotnet --version
     dotnet helloworld.cs
     mcs helloworld.cs
-  displayName: 'Install .NET SDK'
+  displayName: 'Hello World run'
 
