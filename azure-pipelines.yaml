@@ -5,11 +5,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo "Building the project..."
-  displayName: 'Build the project'
+- script: |
+    sudo apt-get update
+    sudo apt-get install -y mono-complete
+    mono --version
+  displayName: 'Install Mono'
 
-- script: echo "Running tests..."
-  displayName: 'Run tests'
+- script: |
+    echo "Installing .NET SDK..."
+    sudo apt update
+    sudo apt install dotnet-sdk-8.0 -y
+    dotnet --version
+    dotnet helloworld.cs
+  displayName: 'Install .NET SDK'
 
-- script: echo "Deploying the application..."
-  displayName: 'Deploy the application'
