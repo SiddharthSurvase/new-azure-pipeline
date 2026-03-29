@@ -12,10 +12,8 @@ steps:
   displayName: 'Install Mono'
 
 - script: |
-    echo "Installing .NET SDK..."
-    sudo apt update
-    sudo apt install dotnet-sdk-8.0 -y
     dotnet --version
     dotnet helloworld.cs
+    mcs helloworld.cs
   displayName: 'Install .NET SDK'
 
